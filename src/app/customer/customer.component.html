@@ -1,0 +1,31 @@
+
+<div class="container">
+<button type="button" class="btn btn-success ml-5 mt-5" (click)="customerinfo()">Customer info</button>
+
+  <p>customer works!</p>
+
+<ol class="bg-dark text-light">
+  <li> id is {{customer.id}}</li>
+  <li> name is {{customer.name}}</li>
+  <li> sal  is {{customer.salary}}</li>
+  <li> sal  is <img [src]="customer.image"  [width]="customer.width"  [height]="customer.height"></li>
+</ol>
+
+<table class="table table-striped" >
+  <thead>
+    <tr class=" bg-dark text-light">
+    <th>Customer Id</th>
+    <th>Customer Name</th>
+    <th>Customer Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cust of customer1">
+      <td>{{cust.id}}</td>
+      <td>{{cust.name}}</td>
+      <td>{{cust.salary}}</td>
+      <td><img [src]="cust.image" [width]="cust.width"  [height]="cust.height"/></td>
+    </tr>
+  </tbody>
+</table>
+</div>
