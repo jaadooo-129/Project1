@@ -4,7 +4,7 @@ export const UserData = [
 
     username: 'suresh kumar',
 
-    usersalary: 2000,
+    usersalary: 70000 ,
 
     userdob: '11/12/1999',
 

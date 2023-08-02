@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Calculation } from './Model/Calculation';
 
 @Component({
   selector: 'app-insterest-calculator',
@@ -6,14 +7,11 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./insterest-calculator.component.css'],
 })
 export class InsterestCalculatorComponent {
-  @Input() amt: number;
-  @Input() rate: number;
-  @Input() time: number;
+  @Input() cal:Calculation
 
-  constructor() {
-    this.amt = 0;
-    this.rate = 0;
-    this.time = 0;
+  constructor()
+  {
+    this.cal=new Calculation();
   }
   ngInit() {}
 }

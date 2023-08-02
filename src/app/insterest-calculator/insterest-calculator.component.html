@@ -1,88 +1,33 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>Interest Calculator</title>
-  <!-- Add Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-    }
-
-    .container {
-      max-width: 500px;
-      margin: 0 auto;
-      padding: 20px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      background-color: #fff;
-      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    form {
-      margin-bottom: 20px;
-    }
-
-    form div {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-
-    form label {
-      flex: 1;
-      font-weight: bold;
-    }
-
-    form input {
-      flex: 2;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      outline: none;
-    }
-
-    div.result {
-      font-size: 18px;
-      font-weight: bold;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      padding: 10px;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="container">
-    <h1>Interest Calculator</h1>
-    <form>
-      <div>
-        <label>Enter Amount</label>
-        <input [(ngModel)]="amt" name="amt">
-      </div>
-      <div>
-        <label>Enter Rate</label>
-        <input [(ngModel)]="rate" name="rate">
-      </div>
-      <div>
-        <label>Enter Time</label>
-        <input [(ngModel)]="time" name="time">
-      </div>
-    </form>
-    <div class="result">
-      <div>Amount: {{amt}}</div>
-      <div>Rate: {{rate}}</div>
-      <div>Time: {{time}}</div>
-      <div>Time: {{amt*time*rate/100}}</div>
+<div class="container mt-4">
+  <h1>Interest Calculator</h1>
+  <form>
+    <div class="mb-3">
+      <label for="amt">Enter Amount</label>
+      <input [(ngModel)]="cal.amt" name="amt" id="amt" class="form-control" />
     </div>
+    <div class="mb-3">
+      <label for="rate">Enter Rate</label>
+      <input
+        [(ngModel)]="cal.rate"
+        name="rate"
+        id="rate"
+        class="form-control"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="time">Enter Time</label>
+      <input
+        [(ngModel)]="cal.time"
+        name="time"
+        id="time"
+        class="form-control"
+      />
+    </div>
+  </form>
+  <div class="result mt-3">
+    <div>Amount: {{ cal.amt }}</div>
+    <div>Rate: {{ cal.rate }}</div>
+    <div>Time: {{ cal.time }}</div>
+    <div>Interest: {{ (cal.amt * cal.time * cal.rate) / 100 }}</div>
   </div>
-
-  <!-- Add Bootstrap JavaScript (optional, only needed for certain components) -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-
-</html>
+</div>

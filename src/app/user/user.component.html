@@ -39,8 +39,9 @@
       <!-- Assuming you have the 'user' array defined in the Angular component -->
       <tr *ngFor="let us of user">
         <td>{{us.userid}}</td>
-        <td>{{us.username}}</td>
-        <td>{{us.usersalary}}</td>
+        <span *ngIf="us.usersalary>=50000" class="bg-warning">{{us.username}}</span>
+        <span *ngIf="us.usersalary<50000" class="text-light">{{us.username}}</span>
+        <td>{{us.usersalary | currency: 'Rs'}}</td>
         <td>{{us.userdob}}</td>
         <td>{{us.userhobby}}</td>
       </tr>
